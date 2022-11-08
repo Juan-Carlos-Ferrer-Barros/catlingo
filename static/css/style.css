@@ -1,0 +1,57 @@
+/* Colores con codigo hexadecimal  */
+
+:root {
+    --richBlack: #1b162a;
+    --lightBlack: #1f1a30;
+    --neonBlue: #0df5e3;
+    --neonOrange: #ff8534;
+    --neonOrange: #db6b20;
+    --purpleDark: #38304c;
+    --purpleText: #696574;
+}
+
+#menu {
+    background-color: var(--richBlack);
+}
+
+#recuadro {
+    /* height: 60vh; */
+    padding-top: 2rem;
+}
+
+.recuadro-purple {
+    background-color: var(--purpleDark);
+    border-radius: 5px;
+}
+
+.boton {
+    color: #fff;
+    border-color: #f1bc31;
+    background: #e9a806;
+    font-weight: bold;
+}
+
+body {
+    background-color: var(--richBlack);
+}
+
+/* menú desplegable */
+
+.dropdown-menu {
+    background-color: #e9a806;
+}
+
+.dropdown-item {
+    color: white;
+    font-weight: 500;
+}
+
+/* fin menu deplegable */
+
+.col-example {
+    padding: 1rem;
+    background-color: #33b5e5;
+    border: 2px solid #fff;
+    color: #fff;
+    text-align: center;
+}

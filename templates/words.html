@@ -1,0 +1,103 @@
+{% extends 'head.html' %} {% block body %}
+
+<div class="container">
+
+<!-- Agregar palabra -->
+  <p class="display-6 text-white pt-4 pb-2">Agregar Palabra</p>
+	<!-- redirigimos a /words/add -->
+  <form action="/words/add" method="POST">
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Español"
+          name="spanish"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Inglés"
+          name="english"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Italiano"
+          name="italian"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Catalán"
+          name="catalan"
+        />
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-warning boton text-white">
+          Enviar
+        </button>
+      </div>
+    </div>
+  </form>
+  <!-- Fin agregar palabra -->
+
+<!-- Mostrar palabras de la DB -->
+  <div class="row justify-content-center pt-4">
+    <div class="col-5 text-center">
+      <table class="table text-white table-borderless">
+        <thead>
+          <tr>
+            <th>Español</th>
+            <th>Inglés</th>
+            <th>Italiano</th>
+            <th>Catalán</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for word in words %}
+          <tr>
+            <td scope="row">{{word[1].capitalize()}}</td>
+            <td>{{word[2].capitalize()}}</td>
+            <td>{{word[3].capitalize()}}</td>
+            <td>{{word[4].capitalize()}}</td>
+
+            						<!-- boton editar -->
+						<td class="p-0">
+                            <a
+                              href="/words/edit/{{word[0]}}"
+                              class="btn btn-warning boton text-white btn-sm"
+                            >
+                              Editar
+                            </a>
+                          </td>
+                          
+
+						<!-- boton eliminar -->
+						<td class="p-0">
+                            <a
+                              href="/words/delete/{{word[0]}}"
+                              class="btn btn-danger text-white fw-bold btn-sm"
+                            >
+                              Eliminar
+                            </a>
+                          </td>
+  
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+{% endblock body %}
