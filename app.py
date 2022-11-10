@@ -228,7 +228,7 @@ def edit(id):
     con.close()
     return render_template('edit.html', word=word_data, words=words)
 
-@app.route('/words/update/<int:id>', methods=['PATCH'])
+@app.route('/words/update/<int:id>', methods=['POST'])
 def update(id):
     # obtener datos formulario
     spanish = request.form['spanish']
